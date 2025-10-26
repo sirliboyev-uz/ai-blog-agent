@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  blog-agent:
+    build: .
+    container_name: ai-blog-agent
+    restart: unless-stopped
+    env_file:
+      - config/.env
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config:ro
+    command: python src/main.py --schedule
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Optional: One-time batch job
+  batch-job:
+    build: .
+    container_name: ai-blog-batch
+    env_file:
+      - config/.env
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config:ro
+    command: python src/main.py --batch 5
+    profiles:
+      - batch
+
+  # Optional: Demo mode
+  demo:
+    build: .
+    container_name: ai-blog-demo
+    env_file:
+      - config/.env
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config:ro
+    command: python src/main.py --demo
+    profiles:
+      - demo

@@ -1,0 +1,38 @@
+# Core Dependencies
+openai>=1.55.0                    # OpenAI Agent SDK
+python-dotenv>=1.0.0              # Environment configuration
+pydantic>=2.9.0                   # Data validation
+pydantic-settings>=2.6.0          # Settings management
+
+# WordPress Integration
+requests>=2.32.0                  # HTTP client for WordPress REST API
+urllib3>=2.2.0                    # HTTP library
+
+# Google Sheets Integration
+gspread>=6.1.0                    # Google Sheets API
+google-auth>=2.36.0               # Google authentication
+google-auth-oauthlib>=1.2.0       # OAuth for Google APIs
+google-auth-httplib2>=0.2.0       # HTTP client for Google APIs
+
+# Image APIs
+pillow>=11.0.0                    # Image processing
+
+# Scheduling
+APScheduler>=3.10.4               # Job scheduling and automation
+
+# Logging & Monitoring
+loguru>=0.7.0                     # Advanced logging
+python-telegram-bot>=21.7         # Telegram notifications (optional)
+
+# Utilities
+httpx>=0.28.0                     # Async HTTP client
+tenacity>=9.0.0                   # Retry logic with exponential backoff
+pyyaml>=6.0.2                     # YAML configuration parsing
+aiofiles>=24.1.0                  # Async file operations
+
+# Development & Testing
+pytest>=8.3.0                     # Testing framework
+pytest-asyncio>=0.24.0            # Async testing
+black>=24.10.0                    # Code formatting
+ruff>=0.8.0                       # Linting
+mypy>=1.13.0                      # Type checking
